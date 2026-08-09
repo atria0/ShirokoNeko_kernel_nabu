@@ -43,16 +43,16 @@ jobs:
       - name: DsSp
         run: |
           cd $GITHUB_WORKSPACE/workdir/source
-          echo "CONFIG_NAMESPACES=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_UTS_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
-      
+          echo "CONFIG_NAMESPACES=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_stability_defconfig
+          cd $GITHUB_WORKSPACE/workdir/source/arch/arm64/configs/
+          curl -LO https://raw.githubusercontent.com/atria0/Xiaomi_Kernel_OpenSource/refs/heads/nabu-r-oss/arch/arm64/configs/nabu_stability_defconfig
       - name: Build kernel
         run: |
           export KBUILD_BUILD_USER=${{ github.actor }}
