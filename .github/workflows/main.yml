@@ -54,15 +54,6 @@ jobs:
           echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_USER_NS=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_DEVTMPFS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SECCOMP_FILTER=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_CGROUP_DEVICE=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_CGROUP_PIDS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_MEMCG=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_CGROUP_NET_PRIO=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_FAIR_GROUP_SCHED=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_FW_LOADER=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_FW_LOADER_USER_HELPER=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_FW_LOADER_COMPRESS=y" >> ./arch/arm64/configs/nabu_defconfig
 
           
       - name: Build kernel
