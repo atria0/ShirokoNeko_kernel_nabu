@@ -50,6 +50,8 @@ jobs:
           echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_DEVTMPFS=y"  >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_USER_NS=y" >> ./arch/arm64/configs/nabu_defconfig
       
       - name: Build kernel
         run: |
