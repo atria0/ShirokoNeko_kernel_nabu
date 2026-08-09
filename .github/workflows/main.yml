@@ -57,7 +57,6 @@ jobs:
           echo "CONFIG_MEMCG=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_FAIR_GROUP_SCHED=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_CGROUP_NET_PRIO=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SECCOMP_FILTER=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_FW_LOADER=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_FW_LOADER_COMPRESS=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_ANDROID_PARANOID_NETWORK=n" >> ./arch/arm64/configs/nabu_defconfig
