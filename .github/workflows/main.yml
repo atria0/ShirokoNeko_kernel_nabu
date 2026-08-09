@@ -54,6 +54,7 @@ jobs:
           echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_USER_NS=y" >> ./arch/arm64/configs/nabu_defconfig
           echo "CONFIG_DEVTMPFS=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_VETH=y" >> ./arch/arm64/configs/nabu_defconfig
 
           
       - name: Build kernel
