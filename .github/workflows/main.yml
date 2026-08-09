@@ -43,15 +43,17 @@ jobs:
       - name: DsSp
         run: |
           cd $GITHUB_WORKSPACE/workdir/source
-          echo "CONFIG_NAMESPACES=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_UTS_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_defconfig
-          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_NAMESPACES=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_UTS_NS=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_USER_NS=y" >> ./arch/arm64/configs/nabu-perf_defconfig
+          echo "CONFIG_DEVTMPFS=y" >> ./arch/arm64/configs/nabu-perf_defconfig
       
       - name: Build kernel
         run: |
