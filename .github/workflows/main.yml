@@ -37,21 +37,20 @@ jobs:
           git clone https://github.com/kdrag0n/proton-clang.git -b 20210522 --depth 1 $GITHUB_WORKSPACE/workdir/clang
       - name: Get source
         run: |
-          git clone --recursive https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git \
-          -b nabu-r-oss \
+          git clone --recursive https://github.com/atria0/ShirokoNeko_kernel_nabu.git \
+          -b KernelSU \
           --depth 1 $GITHUB_WORKSPACE/workdir/source
       - name: DsSp
         run: |
           cd $GITHUB_WORKSPACE/workdir/source
-          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_stability_defconfig
-          cd $GITHUB_WORKSPACE/workdir/source/arch/arm64/configs/
-          curl -LO https://raw.githubusercontent.com/atria0/Xiaomi_Kernel_OpenSource/refs/heads/nabu-r-oss/arch/arm64/configs/nabu_stability_defconfig
+          echo "CONFIG_PID_NS=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_IPC_NS=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_TMPFS_POSIX_ACL=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_TMPFS_XATTR=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_SYSCTL=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_SYSVIPC=y" >> ./arch/arm64/configs/nabu_defconfig
+          echo "CONFIG_POSIX_MQUEUE=y" >> ./arch/arm64/configs/nabu_defconfig
+      
       - name: Build kernel
         run: |
           export KBUILD_BUILD_USER=${{ github.actor }}
@@ -62,7 +61,7 @@ jobs:
           export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
           export CROSS_COMPILE=aarch64-linux-gnu-
           cd $GITHUB_WORKSPACE/workdir/source
-          make O=out nabu_stability_defconfig CC=clang
+          make O=out nabu_defconfig CC=clang
           make -j$(nproc --all) O=out CC=clang LD=ld.lld
       - name: Verify output
         run: |
