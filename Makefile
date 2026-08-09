@@ -2,7 +2,7 @@
 VERSION = 4
 PATCHLEVEL = 14
 SUBLEVEL = 190
-EXTRAVERSION =
+EXTRAVERSION = "-Aemeath-clang_nabu_Mahiro"
 NAME = Petit Gorille
 
 # *DOCUMENTATION*
