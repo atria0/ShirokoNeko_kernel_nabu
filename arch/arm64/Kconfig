@@ -1563,3 +1563,5 @@ endif
 source "lib/Kconfig"
 
 source "drivers/KernelSU/kernel/Kconfig"
+config KALLSYMS_ALL
+	def_bool y
