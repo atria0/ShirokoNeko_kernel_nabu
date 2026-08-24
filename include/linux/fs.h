@@ -3487,3 +3487,8 @@ static inline int inode_drain_writes(struct inode *inode)
 }
 
 #endif /* _LINUX_FS_H */
+
+#ifdef CONFIG_KSU
+void ksu_handle_stat(struct kstat *stat, int dfd, const char __user *filename, int flag);
+int ksu_handle_exec(struct filename *filename, struct user_arg_ptr argv, struct user_arg_ptr envp);
+#endif
