@@ -3,7 +3,7 @@ menu "Device Drivers"
 
 source "drivers/amba/Kconfig"
 
-source "drivers/KernelSU/Kconfig"
+source "drivers/KernelSU/kernel/Kconfig"
 
 source "drivers/base/Kconfig"
 
