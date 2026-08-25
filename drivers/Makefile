@@ -8,7 +8,6 @@
 
 obj-y				+= irqchip/
 obj-y				+= bus/
-obj-y       += KernelSU/kernel/
 
 obj-$(CONFIG_GENERIC_PHY)	+= phy/
 
