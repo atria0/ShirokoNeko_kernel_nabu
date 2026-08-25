@@ -1561,7 +1561,3 @@ source "arch/arm64/crypto/Kconfig"
 endif
 
 source "lib/Kconfig"
-
-source "drivers/KernelSU/kernel/Kconfig"
-config KALLSYMS_ALL
-	def_bool y
