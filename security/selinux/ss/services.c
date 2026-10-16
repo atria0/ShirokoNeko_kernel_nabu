@@ -95,7 +95,7 @@ static int context_struct_to_string(struct policydb *policydb,
 				    char **scontext,
 				    u32 *scontext_len);
 
-static void context_struct_compute_av(struct policydb *policydb,
+void context_struct_compute_av(struct policydb *policydb,
 				      struct context *scontext,
 				      struct context *tcontext,
 				      u16 tclass,
